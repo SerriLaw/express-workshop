@@ -3,7 +3,11 @@ var app = express();
 
 
 app.get('/', function (req, res) {
-  res.send('Hello world!');
+  res.send('This is my homepage');
+});
+
+app.get('/next', function (req, res) {
+  res.send('This is my next page');
 });
 
 
