@@ -9,9 +9,22 @@ app.use(formidable());
 
 
 app.post('/create-post', function (req, res) {
-  console.log('/create-post was hit');
-  console.log(req.fields);
-  
+  var text = req.fields.blogpost;
+  var timestamp = Date.now();
+  var data;
+
+  fs.readFile(__dirname + '/data/posts.json', function (error, file) {
+
+    data = JSON.parse(file);
+    data[timestamp] = text;
+    data = JSON.stringify(data);
+
+
+    fs.writeFile(__dirname + '/data/posts.json', data, function (error) {
+
+    });
+
+  });
 });
 
 app.get('/posts', function (req, res) {
