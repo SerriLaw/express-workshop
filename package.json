@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SerriLaw/express-workshop#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "express-formidable": "^1.0.0"
   }
 }

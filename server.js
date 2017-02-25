@@ -1,15 +1,15 @@
 var express = require('express');
+var formidable = require('express-formidable');
+
 var app = express();
 
+app.use(express.static('public'));
+app.use(formidable());
 
-app.get('/', function (req, res) {
-  res.send('This is my homepage');
+app.post('/create-post', function (req, res) {
+  console.log('/create-post was hit');
+  console.log(req.fields);
 });
-
-app.get('/next', function (req, res) {
-  res.send('This is my next page');
-});
-
 
 app.listen(3000, function () {
   console.log('Server is listening on port 3000');
