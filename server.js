@@ -39,6 +39,10 @@ app.get('/posts', function (req, res) {
 
 });
 
+app.get('/get-posts', function (req, res) {
+  res.sendFile(__dirname + '/data/posts.json');
+});
+
 app.listen(3000, function () {
   console.log('Server is listening on port 3000');
 });
